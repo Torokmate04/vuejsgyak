@@ -1,0 +1,28 @@
+<script setup></script>
+
+<template>
+  <header></header>
+  <main>
+    <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />taskr
+  </main>
+  <footer></footer>
+
+</template>
+
+<style scoped>
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+:root {
+    --blue: #576ca8;
+    --inputBg: #444b67;
+    --cr1: #c94277;
+    --cr2: #1b998b;
+    --cr3: #ffd046;
+  }
+  #app{
+    font-family: Quicksand, sans-serif;
+    background-color: black;
+    color: #fff;
+  }
+  
+
+</style>
