@@ -35,8 +35,6 @@ body {
   font-family: Quicksand, sans-serif;
 }
 
-#app {
-}
 
 main {
   padding: 10vh 0.5rem 22vh 0.5rem;
