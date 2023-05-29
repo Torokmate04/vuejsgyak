@@ -1,12 +1,22 @@
 <script setup>
+import { createApp } from 'vue';
+import Tasks from './components/Tasks.vue';
 import Welcome from './components/Welcome.vue';
 
+function hideWelcome(){
+  
+}
 </script>
 
 <template>
-  <header></header>
+  
+    
+    
+  
+  <header><button @click="hideWelcome">Welcome elrejtése</button></header>
   <main>
-    <Welcome></Welcome>
+    <Welcome />
+    <Tasks/>
   </main>
   <footer></footer>
 

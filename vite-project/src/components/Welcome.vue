@@ -1,4 +1,18 @@
 <script setup>
+import { ref } from 'vue';
+import App from '../App.vue';
+
+const email = ref('')
+const pass = ref('')
+const error = ref('')
+
+const login = () => {
+  if(!email.value || !pass.value){
+    error.value = 'Tölktsd ki mindkét mezőt!';
+  }
+  
+  
+}
 
 </script>
 
@@ -14,9 +28,11 @@
       <div class="df spinner">
       <font-awesome-icon icon="user-astronaut" />
       </div>
-        <input type="email" placeholder="EMAIL">
-        <input type="password" placeholder="JELSZO">
-        <input type="button" value="Login">
+      {{ error }}
+        <input type="email" placeholder="EMAIL" v-model="email">
+        <input type="password" placeholder="JELSZO" v-model="pass">
+        <input @click="login" type="button" value="Login">
+       
     </form>
 </template>
 
