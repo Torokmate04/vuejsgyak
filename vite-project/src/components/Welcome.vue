@@ -10,12 +10,10 @@
     <img src="../assets/vue.svg" class="logo vue" alt="Vue logo" />
     </div>
     
-    <div class="df spinner" v-show="waitingForServerResponse">
-    <font-awesome-icon icon="spinner" spin="true" />
-    </div>
-
-
     <form class="df">
+      <div class="df spinner">
+      <font-awesome-icon icon="user-astronaut" />
+      </div>
         <input type="email" placeholder="EMAIL">
         <input type="password" placeholder="JELSZO">
         <input type="button" value="Login">
