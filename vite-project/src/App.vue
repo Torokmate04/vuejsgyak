@@ -6,24 +6,24 @@ import Adatok from './components/Adatok.json';
 
 
 var jsonfile = Adatok;
-var bool = false;
-for(var i = 0; i < jsonfile.length; i++){
+var bool = true;
+/*for(var i = 0; i < jsonfile.length; i++){
   var felhasznalo = jsonfile[i].felhasznalo;
   var felhasznaloId = felhasznalo.id;
 
 }
 if(felhasznaloId != null){
   bool = true;
-}
+}*/
 
-
+console.log(bool)
 </script>
 
 <template>
 
   <main>
-    <Welcome v-if="!bool" />
-     <Tasks v-if="bool"  />
+    <Welcome  />
+     <Tasks />
   </main>
  
 
