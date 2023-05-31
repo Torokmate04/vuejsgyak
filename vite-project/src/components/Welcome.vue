@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import App from '../App.vue';
+import Adatok from './Adatok.json';
+
+
 
 const email = ref('')
 const pass = ref('')
@@ -9,9 +12,15 @@ const error = ref('')
 const login = () => {
   if(!email.value || !pass.value){
     error.value = 'Tölktsd ki mindkét mezőt!';
+    return
+  }
+  else{
+    
+    error.value = "Sikeres bejelentkezés!"
+    return
   }
   
-  
+  //itt kéne a jsonfilet letrehozni és felvenni a felhasznalot vagy be léptetni
 }
 
 </script>

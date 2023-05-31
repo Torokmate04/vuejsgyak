@@ -1,24 +1,28 @@
 <script setup>
-import { createApp } from 'vue';
+import { createApp, ref } from 'vue';
 import Tasks from './components/Tasks.vue';
 import Welcome from './components/Welcome.vue';
+import Adatok from './components/Adatok.json';
 
-function hideWelcome(){
-  
+var bool = ref(false);
+var jsonfile = Adatok;
+for(var i = 0; i < jsonfile.length; i++){
+  var felhasznalo = jsonfile[i].felhasznalo;
+  var felhasznaloId = felhasznalo.id;
+
 }
+if(felhasznaloId != null){
+  bool = true;
+}
+console.log(bool)
 </script>
 
 <template>
-  
-    
-    
-  
-  <header><button @click="hideWelcome">Welcome elrejtése</button></header>
   <main>
-    <Welcome />
-    <Tasks/>
+    <Welcome v-if="!bool" />
+     <Tasks v-if="bool"  />
   </main>
-  <footer></footer>
+ 
 
 </template>
 
@@ -38,7 +42,9 @@ function hideWelcome(){
   padding: 0;
   box-sizing: border-box;
 }
-
+ul{
+  list-style: none;
+}
 body {
   background-color: #302b27;
   color: #fff;
