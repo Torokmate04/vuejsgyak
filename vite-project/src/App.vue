@@ -4,8 +4,9 @@ import Tasks from './components/Tasks.vue';
 import Welcome from './components/Welcome.vue';
 import Adatok from './components/Adatok.json';
 
-var bool = ref(false);
+
 var jsonfile = Adatok;
+var bool = false;
 for(var i = 0; i < jsonfile.length; i++){
   var felhasznalo = jsonfile[i].felhasznalo;
   var felhasznaloId = felhasznalo.id;
@@ -14,10 +15,12 @@ for(var i = 0; i < jsonfile.length; i++){
 if(felhasznaloId != null){
   bool = true;
 }
-console.log(bool)
+
+
 </script>
 
 <template>
+
   <main>
     <Welcome v-if="!bool" />
      <Tasks v-if="bool"  />

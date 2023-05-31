@@ -1,19 +1,26 @@
 <script setup>
-
-const tomb = [
-    {
-    task:"Első task",
-    due_date:"2023.06.05",
-    created_at:"2023.05.30"
-},
-{
-    task: "Masodik task",
-    due_date:"2023.08.12",
-    created_at:"2023.05.31"
+import Adatok from './Adatok.json';
+var jsonfile = Adatok;
+var tasks = jsonfile[0].tasks;
+for(var i = 0; i < jsonfile.length+1; i++){
+  var task = tasks[i];
+  var tasks_task = task.task;
+  var tasks_due_date = task.due_date;
+  var tasks_created_at = task.created_at;
+  console.log(task);
+  console.log(tasks_task);
+  console.log(tasks_due_date);
+  console.log(tasks_created_at);
 }
-]
+var count = 0
 const addTask = () => {
 // itt kéne a json fileba taskokat felvenni 
+count ++;
+console.log(count)
+}
+const torol = (taskname) =>{
+  //itt meg torolni a taskot
+  console.log(taskname)
 }
 </script>
 
@@ -24,19 +31,17 @@ const addTask = () => {
         <h1>taskR</h1>
     </div>
     </header>
-    <main>
-<section v-for="task in tomb"> 
-    <p>{{ task.task }}</p>
-    <ul class="df">
-        <li>{{ task.due_date}}</li>
-        <li>{{ task.created_at}}</li>
-        <li>
-            <font-awesome-icon icon="pen-nib"/>
+    <main style="display:inline-block;">
+      <section v-for="task in tasks">
+    <p id="taskname">{{ task.task }}</p>
+    <ul>
+        <li>{{ task.due_date}}-ig</li>
+        <li>{{ task.created_at }}-ban lett létrehozva</li>
+        <li style="cursor: pointer; float: right;" @click="torol(task.task)">
             <font-awesome-icon icon="trash"/>
         </li>
-        
     </ul>
-</section>
+  </section> 
 </main>
 <footer>
         <form @submit.prevent="addTask">
@@ -160,5 +165,11 @@ footer form {
 
   header svg {
     margin: 0.25rem;
+  }
+  #taskname{
+    text-align: justify;
+    font-size: 3rem;
+    height: 5rem;
+    width: auto;
   }
 </style>

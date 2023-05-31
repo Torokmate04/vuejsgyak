@@ -15,8 +15,8 @@ const login = () => {
     return
   }
   else{
-    
     error.value = "Sikeres bejelentkezés!"
+    App.bool = false;
     return
   }
   
